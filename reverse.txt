@@ -1,0 +1,48 @@
+package placement;
+
+import java.util.Scanner;  
+public class reverse  
+{  
+	static void reverseArray(int arr[][],int N)
+	{
+	    for (int i = 0; i < N; i++) {
+	        int start = 0;
+	        int end = N - 1;
+	        while (start < end) {
+	            int temp = arr[i][start];
+	            arr[i][start] = arr[i][end];
+	            arr[i][end] = temp;
+	            start++;
+	            end--;
+	        }
+	    }
+	    for(int i=0;i<N;i++)
+	    {
+			for(int j=0;j<N;j++)
+			{
+				arr[i][j] = 1- arr[i][j];
+				System.out.print(arr[i][j]+" ");
+			}
+			System.out.println(" ");
+		}
+	}
+    public static void main(String args[])    
+    {  
+    int i, j;  
+    System.out.println("Enter total rows and columns: ");  
+    Scanner s = new Scanner(System.in);  
+    int n = s.nextInt();  
+      
+    int array[][] = new int[n][n];  
+    System.out.println("Enter matrix:");  
+    for(i = 0; i < n; i++)  
+    {  
+        for(j = 0; j < n; j++)   
+            {  
+            array[i][j] = s.nextInt();  
+            System.out.print(" ");  
+            }  
+    } 
+    reverseArray(array,n);
+    }
+}
