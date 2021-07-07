@@ -1,0 +1,62 @@
+package placement;
+
+
+import java.util.*;
+
+class maxmin{
+	
+
+public static void main(String[] args)
+{
+	int i, j;  
+    System.out.println("Enter total rows and columns: ");  
+    Scanner s = new Scanner(System.in);  
+    int m = s.nextInt();  
+    int n = s.nextInt();  
+    int mat[][] = new int[m][n];  
+    System.out.println("Enter matrix:");  
+    for(i = 0; i <m; i++)  
+    {  
+        for(j = 0; j <n; j++)   
+            {  
+            mat[i][j] = s.nextInt();  
+            System.out.print(" ");  
+            }  
+    }  
+  int k=0;
+    for(i=0; i<m;i++)
+    {
+    	  int minr = Integer.MAX_VALUE;
+    	  
+    	    int maxc = Integer.MIN_VALUE;
+    	    
+    	for(j=0;j<n;j++)
+    	{
+    		if(mat[i][j]<minr)
+    		{
+    			minr=mat[i][j];
+    			
+    			k=j;
+    		}
+    		
+    	}
+    	for(j=0;j<m;j++)
+    	{
+    		if(mat[j][k]>maxc)
+    		{
+    			maxc=mat[j][k];
+    		}
+    	}
+    	
+    	if(minr==maxc)
+    	{
+    		System.out.println(minr);
+    		break;
+    	}
+    }
+    
+}
+}
+
+
+
